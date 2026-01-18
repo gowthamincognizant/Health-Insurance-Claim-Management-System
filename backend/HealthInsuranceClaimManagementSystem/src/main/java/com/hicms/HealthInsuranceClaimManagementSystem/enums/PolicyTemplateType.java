@@ -1,6 +1,6 @@
 package com.hicms.HealthInsuranceClaimManagementSystem.enums;
 
-public enum PolicyType {
+public enum PolicyTemplateType {
     INDIVIDUAL,
     FAMILY_FLOATER,
     SENIOR_CITIZEN,

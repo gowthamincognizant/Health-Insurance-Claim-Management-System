@@ -1,7 +1,7 @@
 package com.hicms.HealthInsuranceClaimManagementSystem.model;
 
-import com.hicms.HealthInsuranceClaimManagementSystem.enums.PolicyStatus;
-import com.hicms.HealthInsuranceClaimManagementSystem.enums.PolicyType;
+import com.hicms.HealthInsuranceClaimManagementSystem.enums.PolicyTemplateStatus;
+import com.hicms.HealthInsuranceClaimManagementSystem.enums.PolicyTemplateType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,17 +23,17 @@ public class PolicyTemplate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "policy_id")
-    private Long policyId;
+    private Long policyTemplateId;
 
     @Column(name = "policy_name", nullable = false)
-    private String policyName;
+    private String policyTemplateName;
 
     @Column(name = "policy_number", unique = true, nullable = false)
-    private String policyNumber;
+    private String policyTemplateNumber;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "policy_type", nullable = false)
-    private PolicyType policyType;
+    private PolicyTemplateType policyTemplateType;
 
     @Column(name = "coverage_amount", nullable = false)
     private Double coverageAmount;
@@ -44,12 +44,12 @@ public class PolicyTemplate {
     @Column(name = "tenure_in_years", nullable = false)
     private Integer tenureInYears;
 
-    @Column(name = "description", nullable = false)
+    @Column(name = "description", nullable = false, length = 500)
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
-    private PolicyStatus status;
+    @Column(name = "policy_template_status", nullable = false)
+    private PolicyTemplateStatus policyTemplateStatus;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)

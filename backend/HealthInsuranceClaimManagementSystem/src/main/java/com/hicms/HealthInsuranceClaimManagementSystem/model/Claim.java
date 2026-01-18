@@ -36,8 +36,8 @@ public class Claim {
     private ClaimStatus claimStatus;
 
     @ManyToOne
-    @JoinColumn(name = "policy_id", nullable = false)
-    private PolicyTemplate policyTemplate;
+    @JoinColumn(name = "user_policy_id", nullable = false)
+    private UserPolicy userPolicy;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
